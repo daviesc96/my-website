@@ -2,14 +2,21 @@
 title: "Generative Rhythm Engine"
 description: "An evolving polyrhythmic pattern generator with probability-driven sequencing and spatial distribution."
 pubDate: 2025-01-22
-introImages: ["device_1/analog-01.jpg", "device_1/analog-02.jpg"]
-gallery: ["device_1/analog-01.jpg", "device_1/analog-02.jpg"]
 youtubeEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ"
 ---
 
-## Inspiration
+import Photo from '../../components/Photo.astro';
+import Gallery from '../../components/Gallery.astro';
 
-This device emerged from exploring how simple probabilistic rules could generate surprisingly musical patterns. The goal was to create something that felt structured yet unpredictable—a creative tool rather than just a sequencer.
+This device was built around the idea that musical variation can emerge from a very small set of rules. Instead of a fixed sequence, each layer chooses from a probability distribution, so the same patch can feel fresh every time it runs.
+
+<Photo src="device_1/analog-01.jpg" caption="The machine in its default state, with each voice still visible as a separate rhythmic lane." />
+
+The underlying structure is deliberately modular: nested loops, pacing offsets, and independent probability engines all work together to create a patch that feels both controlled and alive. The goal was not just to generate patterns, but to make those patterns behave like a live ensemble.
+
+<Gallery photos={["device_1/analog-01.jpg", "device_1/analog-02.jpg"]} />
+
+The interface gives quick access to the decisions that matter most: how often a cell changes, how far it drifts from the base tempo, and how much motion is allowed before the system collapses back into order. That balance is what makes it feel expressive rather than random.
 
 ## Design & Architecture
 
@@ -22,7 +29,7 @@ The core system uses nested loop hierarchies with independent probability engine
 
 ### Key Features
 
-- 4–8 simultaneous polyrhythmic voices
+- 4-8 simultaneous polyrhythmic voices
 - Real-time parameter tweaking via sliders and dials
 - MIDI input for external control integration
 - Harmonic constraint system to maintain musicality

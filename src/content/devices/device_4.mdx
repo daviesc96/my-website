@@ -2,14 +2,19 @@
 title: "Spectral Analyzer & Sonifier"
 description: "Real-time FFT analysis with granular resynthesis for turning visual or audio data into musical material."
 pubDate: 2025-01-15
-introImages: ["device_4/analog-03.jpg", "device_4/analog-04.jpg"]
-gallery: ["device_4/analog-03.jpg", "device_4/analog-04.jpg"]
 youtubeEmbed: "https://www.youtube.com/embed/9bZkp7q19f0"
 ---
 
-## Concept
+import Photo from '../../components/Photo.astro';
+import Gallery from '../../components/Gallery.astro';
 
-What if you could feed any audio or visual data into a Max device and have it transformed into new musical material? That's the core idea—analyzing spectral content and using it as a source for granular synthesis or modulation.
+This project began with a simple idea: treat an input signal as data, then turn the data back into music. Instead of composing notes directly, the patch listens for structure in the spectrum and uses that structure to trigger or reshape sound.
+
+<Photo src="device_4/analog-03.jpg" caption="The analyzer view, showing the patch as a system for reading and reinterpreting frequency content." />
+
+The interesting part is that it never really sounds like the original source. The signal is filtered through analysis, peak selection, and granular resynthesis, which means the output becomes a derived instrument rather than a direct copy. That makes it ideal for sonifying environmental recordings, speech, or feedback loops.
+
+<Gallery photos={["device_4/analog-03.jpg", "device_4/analog-04.jpg"]} />
 
 ## Technical Breakdown
 

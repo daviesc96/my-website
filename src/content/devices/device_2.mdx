@@ -2,14 +2,19 @@
 title: "Algorithmic Texture Synthesizer"
 description: "A granular synthesis engine combining wavetable oscillators with probabilistic modulation for evolving ambient textures."
 pubDate: 2025-01-20
-introImages: ["device_2/analog-03.jpg", "device_2/analog-04.jpg"]
-gallery: ["device_2/analog-03.jpg", "device_2/analog-04.jpg"]
 youtubeEmbed: "https://www.youtube.com/embed/jNQXAC9IVRw"
 ---
 
-## Inspiration
+import Photo from '../../components/Photo.astro';
+import Gallery from '../../components/Gallery.astro';
 
-I wanted to create something that could generate lush, evolving soundscapes—textures that shift and morph without direct intervention. The inspiration came from watching cloud formations and thinking about applying that sense of slow, organic change to sound.
+This patch was meant to behave like a slow-moving weather system for sound: a set of grains and modulators combining to create motion without ever resolving into a familiar pattern. The result is less about single notes and more about atmosphere.
+
+<Photo src="device_2/analog-03.jpg" caption="A field of modulation and timing choices, tuned for slow transformation rather than direct melodic motion." />
+
+The texture engine is built around multiple layers of grain generation, where pitch, duration, and density are constantly shifting under the influence of subtle random walks. It creates a feeling of depth and drift, especially when the fog of reverb and the modulation envelope start to blur together.
+
+<Gallery photos={["device_2/analog-03.jpg", "device_2/analog-04.jpg"]} />
 
 ## Architecture
 

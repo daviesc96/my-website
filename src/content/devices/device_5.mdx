@@ -2,14 +2,21 @@
 title: "Harmonic Map Navigator"
 description: "An interactive tool for exploring harmonic relationships through 2D gesture control and real-time harmonic constraint."
 pubDate: 2025-01-12
-introImages: ["device_5/analog-01.jpg", "device_5/analog-03.jpg"]
-gallery: ["device_5/analog-01.jpg", "device_5/analog-03.jpg"]
-youtubeEmbed: "https://www.youtube.com/embed/o1pj2jVGdZw"
+youtubeEmbed: "https://www.youtube.com/embed/9bZkp7q19f0"
 ---
+
+import Photo from '../../components/Photo.astro';
+import Gallery from '../../components/Gallery.astro';
+
+The idea is to create an instrument where you navigate a 2D space, and your position determines both which notes play and how they're voiced. It's less about playing melodies and more about exploring harmonic territories—understanding music as a landscape.
+
+<Photo src="device_4/analog-03.jpg" caption="The analyzer view, showing the patch as a system for reading and reinterpreting frequency content." />
 
 ## Concept
 
 The idea is to create an instrument where you navigate a 2D space, and your position determines both which notes play and how they're voiced. It's less about playing melodies and more about exploring harmonic territories—understanding music as a landscape.
+
+<Gallery photos={["device_4/analog-03.jpg", "device_4/analog-04.jpg"]} />
 
 ## Design Elements
 
@@ -19,7 +26,7 @@ The idea is to create an instrument where you navigate a 2D space, and your posi
 - **Visual map** showing harmonic relationships as a grid
 - **Pre-defined harmonic spaces** (diatonic, pentatonic, chromatic modes, etc.)
 
-### Core Features
+## Core Features
 
 - 8 simultaneous note voices with independent envelopes
 - Real-time voicing changes based on harmonic rules

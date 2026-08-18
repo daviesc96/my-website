@@ -94,6 +94,11 @@ const resolvedGalleryImages = gallery.map((imagePath) => ({
       )
     }
 
+    {/* Main text body */}
+    <div class="prose post__body">
+      <slot />
+    </div>
+
     {/* Intro images (2-up grid like Gallery component) */}
     {
       resolvedIntroImages.length > 0 && (
@@ -116,11 +121,6 @@ const resolvedGalleryImages = gallery.map((imagePath) => ({
         </section>
       )
     }
-
-    {/* Main text body */}
-    <div class="prose post__body">
-      <slot />
-    </div>
 
     {/* YouTube embed (if provided) */}
     {

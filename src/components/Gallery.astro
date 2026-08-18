@@ -18,7 +18,7 @@ interface Props {
 const { photos } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/blog/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
+  '../assets/devices/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
   { eager: true }
 );
 const findMeta = (name: string): ImageMetadata => {
