@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import DevicePost from '../../layouts/DevicePost.astro';
+
+const device = await getCollection('devices').then(
+  (devices) => devices.find((d) => d.id === 'device_1')
+);
+
+if (!device) {
+  throw new Error('Device device_1 not found');
+}
+
+const { Content } = await render(device);
+---
+
+<DevicePost
+  title={device.data.title}
+  description={device.data.description}
+  pubDate={device.data.pubDate}
+  updatedDate={device.data.updatedDate}
+  cover={device.data.cover}
+  coverAlt={device.data.coverAlt}
+  introImages={device.data.introImages}
+  gallery={device.data.gallery}
+  youtubeEmbed={device.data.youtubeEmbed}
+>
+  <Content />
+</DevicePost>

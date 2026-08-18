@@ -1,0 +1,43 @@
+---
+title: "Interactive Delay Network"
+description: "A multi-tap delay system with feedback routing and envelope-driven modulation for experimental sound design."
+pubDate: 2025-01-18
+introImages: ["device_3/analog-01.jpg", "device_3/analog-02.jpg"]
+gallery: ["device_3/analog-01.jpg", "device_3/analog-02.jpg"]
+youtubeEmbed: "https://www.youtube.com/embed/2Vv-BfVoq4g"
+---
+
+## Inspiration
+
+Started with a fascination about how multiple delay lines could interact when fed back into each other. What if each tap not only repeated the signal but also modulated its neighbors? The goal was to create an instrument where complexity emerges from simple feedback rules.
+
+## How It Works
+
+The device features:
+
+- **8 independent delay lines** with variable tap times
+- **Cross-feedback matrix** where each tap can send to others
+- **Envelope followers** on each channel
+- **Modulation of delay times** via LFOs and external CV
+- **Tone stacking filters** per tap
+
+### Signal Flow
+
+Input → Envelope follower → Delay matrix → Cross-feedback mixing → Output compression → Main out
+
+## Build Process
+
+Started as a proof-of-concept using `groove~` and `record~`. Key additions:
+
+1. **Resonant filter banks** per delay line to shape tone
+2. **Probabilistic tap creation** (randomly enable/disable taps)
+3. **Tempo sync** via external clock (MIDI beat clock)
+4. **Visual tap position display** showing audio flowing through the network
+
+## Sound & Application
+
+Great for creating ethereal, decaying textures. The unpredictability of the feedback network means every performance is different, even with identical settings.
+
+## Key Insight
+
+Discovered that limit-ing feedback before it re-enters the delay network is crucial—otherwise it tends toward self-oscillation. The Goldilocks zone between chaos and musicality was hard-won.

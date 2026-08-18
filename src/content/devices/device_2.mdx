@@ -1,0 +1,44 @@
+---
+title: "Algorithmic Texture Synthesizer"
+description: "A granular synthesis engine combining wavetable oscillators with probabilistic modulation for evolving ambient textures."
+pubDate: 2025-01-20
+introImages: ["device_2/analog-03.jpg", "device_2/analog-04.jpg"]
+gallery: ["device_2/analog-03.jpg", "device_2/analog-04.jpg"]
+youtubeEmbed: "https://www.youtube.com/embed/jNQXAC9IVRw"
+---
+
+## Inspiration
+
+I wanted to create something that could generate lush, evolving soundscapes—textures that shift and morph without direct intervention. The inspiration came from watching cloud formations and thinking about applying that sense of slow, organic change to sound.
+
+## Architecture
+
+At its heart is a multi-layer granular engine where:
+
+- **Grain parameters** (duration, pitch, amp) evolve over time
+- **Multiple wavetables** crossfade based on input
+- **Modulation sources** include LFOs, envelopes, and random walks
+- **Reverb and diffusion** create spatial depth
+
+### Technical Approach
+
+- 32 concurrent grain voices with independent ADSR
+- 4 selectable wavetable sets with morphing between them
+- Nested modulation hierarchies (LFO modulating LFO depth, etc.)
+- Real-time CPU monitoring to stay within processing budget
+
+## Design Evolution
+
+First version was monophonic and static. The breakthrough came when I added:
+- Multiple simultaneous grain streams at different pitch centers
+- Slow modulation of grain density (creating "breathing" effect)
+- Cross-modal feedback (audio analyzing pitch, modulating granulation)
+- Visual scope showing spectral content in real-time
+
+## What It Sounds Like
+
+The video demonstrates slow evolution of a pad texture over 2 minutes with minimal parameter changes. The magic happens in the micro-details and harmonic richness.
+
+## Learnings
+
+Understanding modulation routing in Max, particularly how to create naturalistic, non-repetitive variations. The importance of having multiple simultaneous processes for perceived complexity.

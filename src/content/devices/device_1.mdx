@@ -1,0 +1,45 @@
+---
+title: "Generative Rhythm Engine"
+description: "An evolving polyrhythmic pattern generator with probability-driven sequencing and spatial distribution."
+pubDate: 2025-01-22
+introImages: ["device_1/analog-01.jpg", "device_1/analog-02.jpg"]
+gallery: ["device_1/analog-01.jpg", "device_1/analog-02.jpg"]
+youtubeEmbed: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+---
+
+## Inspiration
+
+This device emerged from exploring how simple probabilistic rules could generate surprisingly musical patterns. The goal was to create something that felt structured yet unpredictable—a creative tool rather than just a sequencer.
+
+## Design & Architecture
+
+The core system uses nested loop hierarchies with independent probability engines for each voice. Each pattern layer can:
+
+- **Randomly select from scale tones** avoiding obvious dissonance
+- **Offset timing** for organic swing and feel
+- **Modulate density** based on feedback from previous patterns
+- **Distribute across stereo space** using panning envelopes
+
+### Key Features
+
+- 4–8 simultaneous polyrhythmic voices
+- Real-time parameter tweaking via sliders and dials
+- MIDI input for external control integration
+- Harmonic constraint system to maintain musicality
+- Visual feedback with LED indicators per voice
+
+## Development Story
+
+Started with a simple `counter~` + `choose` setup in 2022. Over iterations, I added:
+- Harmonic analysis to avoid discordant intervals
+- Feedback systems where outputs influence future decisions
+- Dynamic compression to prevent surprise volume spikes
+- A visual control interface for intuitive tweaking
+
+## Results & Demo
+
+The video above shows the device responding to live MIDI input. Notice the organic variation even with the same parameters—each performance is unique.
+
+## Takeaways
+
+Building this taught me about probability distributions in Max, the power of recursive pattern systems, and how critical feedback mechanisms are for creating expressive tools.

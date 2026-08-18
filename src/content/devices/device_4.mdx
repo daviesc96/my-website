@@ -1,0 +1,48 @@
+---
+title: "Spectral Analyzer & Sonifier"
+description: "Real-time FFT analysis with granular resynthesis for turning visual or audio data into musical material."
+pubDate: 2025-01-15
+introImages: ["device_4/analog-03.jpg", "device_4/analog-04.jpg"]
+gallery: ["device_4/analog-03.jpg", "device_4/analog-04.jpg"]
+youtubeEmbed: "https://www.youtube.com/embed/9bZkp7q19f0"
+---
+
+## Concept
+
+What if you could feed any audio or visual data into a Max device and have it transformed into new musical material? That's the core idea—analyzing spectral content and using it as a source for granular synthesis or modulation.
+
+## Technical Breakdown
+
+- **FFT analysis** with variable bin resolution (256–2048 bins)
+- **Peak detection** to find dominant frequencies
+- **Spectral tracking** of frequency evolution over time
+- **Granular playback** triggered by spectral features
+- **Re-synthesis** using detected frequencies as pitch guides
+
+### The Pipeline
+
+Input audio → FFT analysis → Peak finding → Score selection from pitch set → Granular synthesis triggered on peaks → Output
+
+## Development Notes
+
+Early iterations used simple peak-following. The breakthrough was:
+
+1. **Multi-resolution FFT** (different analysis windows for different purposes)
+2. **Harmonic grouping** (associate harmonically-related bins)
+3. **Temporal smoothing** to prevent jittery behavior
+4. **Visualization** of the analysis pipeline so you can see what it's doing
+
+## Use Cases
+
+- Transform spoken word into pitched material
+- Create drum sounds from pitched input
+- Analyze ambient recordings and create variations
+- Real-time data sonification (sensor inputs, network traffic, etc.)
+
+## Surprising Results
+
+The most interesting sounds came from feeding the device back into itself—running its output through its input. Creates strange recursive timbres and unexpected rhythmic patterns.
+
+## Next Steps
+
+Currently exploring better harmonic constraint systems to keep output more musical when fed arbitrary input.

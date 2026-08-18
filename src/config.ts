@@ -17,16 +17,16 @@ export const site = {
   nameZh: '',
   title: 'Your Name',
   description:
-    'A minimal photography portfolio and blog — digital and film galleries, a photo-a-month calendar, and two blogs.',
+    'Max MSP devices — exploring custom audio and generative tools, from concept to demo.',
 };
 
-// Left-hand navigation. "Digital" is the home page and shows by default.
+// Left-hand navigation. Each device is a separate link.
 export const nav: NavItem[] = [
-  { label: 'Digital', href: '/' },
-  { label: 'Analog', href: '/analog' },
-  { label: 'Calendar', href: '/calendar' },
-  { label: 'Tech Blog', href: '/blog/tech' },
-  { label: 'Photo Blog', href: '/blog/photography' },
+  { label: 'Device 1', href: '/devices/device_1' },
+  { label: 'Device 2', href: '/devices/device_2' },
+  { label: 'Device 3', href: '/devices/device_3' },
+  { label: 'Device 4', href: '/devices/device_4' },
+  { label: 'Device 5', href: '/devices/device_5' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'License', href: '/license' },

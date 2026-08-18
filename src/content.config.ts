@@ -1,38 +1,37 @@
 // ────────────────────────────────────────────────────────────────────────────
-//  Blog content collections.
+//  Max MSP Devices collection.
 //
-//  Two blogs, each a folder of Markdown files:
-//    • Tech Blog        → src/content/tech/*.md         (URL: /blog/tech/<slug>)
-//    • Photo Blog → src/content/photography/*.md  (URL: /blog/photography/<slug>)
+//  Devices folder: src/content/devices/*.mdx
+//  URL: /devices/<slug>
 //
-//  The filename (without ".md") becomes the URL slug. Add a file, fill in the
-//  frontmatter below, write Markdown, and it appears — sorted newest-first by
-//  `pubDate`. Set `draft: true` to keep a post out of the production build.
+//  Each device post combines blog text + intro images + gallery + optional video.
+//  The filename (without ".mdx") becomes the URL slug.
+//  Set `draft: true` to hide from production build.
 // ────────────────────────────────────────────────────────────────────────────
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-const blogSchema = ({ image }: { image: () => any }) =>
+const deviceSchema = ({ image }: { image: () => any }) =>
   z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
-    // Optional lead image (rendered full-width above the post + used on cards).
+    // Lead/hero image shown above intro text
     cover: image().optional(),
     coverAlt: z.string().default(''),
+    // Array of images shown in the intro (before main text)
+    introImages: z.array(z.string()).default([]),
+    // Array of images shown in gallery at bottom
+    gallery: z.array(z.string()).default([]),
+    // Optional YouTube embed URL (e.g., "https://www.youtube.com/embed/VIDEO_ID")
+    youtubeEmbed: z.string().optional(),
   });
 
-const tech = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tech' }),
-  schema: blogSchema,
+const devices = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/devices' }),
+  schema: deviceSchema,
 });
 
-const photography = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/photography' }),
-  schema: blogSchema,
-});
-
-export const collections = { tech, photography };
+export const collections = { devices };
